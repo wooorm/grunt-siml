@@ -9,19 +9,19 @@ Checkout [Grunt](http://gruntjs.com/), if you haven't before.
 Checkout [SIML's introduction](https://github.com/padolsey/SIML/wiki/101---Introduction) for more information on [SIML](https://github.com/padolsey/SIML) itself.
 
 ```shell
-npm install grunt-slim --save-dev
+npm install grunt-siml --save-dev
 ```
 
 Once the Grunt Plugin has been installed, it may be enabled inside your Gruntfile with this line of CoffeeScript:
 
 ```coffee
-grunt.loadNpmTasks 'grunt-slim'
+grunt.loadNpmTasks 'grunt-siml'
 ```
 
 ...or with the following JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-slim');
+grunt.loadNpmTasks('grunt-siml');
 ```
 
 ## SIML task
