@@ -1,7 +1,7 @@
 {
   "name": "grunt-siml",
   "description": "SIML in Grunt",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "homepage": "https://github.com/wooorm/grunt-siml",
   "author": {
     "name": "wooorm",
