@@ -4,10 +4,15 @@
 # Copyright (c) 2013 wooorm
 # Licensed under the MIT license.
 
-siml = require 'siml'
-fs = require 'fs'
-
 module.exports = ( grunt ) ->
+
+	siml = require 'siml'
+	fs = require 'fs'
+
+	parser = 
+		'html5' : siml.html5.parse
+		'angular' : siml.angular.parse
+		'default' : siml.parse
 
 	grunt.registerMultiTask 'siml', 'SIML in Grunt.', () ->
 		
@@ -24,6 +29,12 @@ module.exports = ( grunt ) ->
 			# [default='  '] Use custom indentation when pretty=true
 			'indent' : '  '
 			
+			'parse' : 'default'
+
+		unless parser[ options.parse ]
+			options.parse = 'default'
+
+		parse = parser[ options.parse ]
 
 		globOptions = 
 			'nonull' : true
@@ -45,10 +56,16 @@ module.exports = ( grunt ) ->
 			src = src.join options.delimeter
 
 			# Convert.
-			document = siml.html5.parse src, options
+			document = parse src, options
 
 			# Write.
 			grunt.file.write pattern.dest, document
 
 			# Report.
-			grunt.log.writeln 'File `' + pattern.dest.green + '` created.'
+			grunt.log.writeln [
+					'File `'
+					, pattern.dest.green
+					, '` created in '
+					, options.parse
+					, ' mode.'
+				].join ''

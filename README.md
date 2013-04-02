@@ -49,6 +49,13 @@ Default: `false`
 
 Nest with curly brackets when true, whitespace when false.
 
+#### parse
+Type: `String`
+Default: `"default"`
+Values: `"html5"`, `"angular"`, or `"default"`.
+
+SIML parser to use.
+
 ### Usage Examples
 
 In CoffeeScript, setting indentation to :
