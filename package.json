@@ -29,9 +29,11 @@
     }
   ],
   "devDependencies": {
-    "grunt": "0.4.0rc6"
+    "grunt": "0.4.0rc6",
+    "siml": "~0.3.0"
   },
   "keywords": [
-    "gruntplugin", "siml"
+    "gruntplugin",
+    "siml"
   ]
 }
