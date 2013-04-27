@@ -9,10 +9,10 @@ module.exports = ( grunt ) ->
 	siml = require 'siml'
 	fs = require 'fs'
 
-	parser = 
-		'html5' : siml.html5.parse
-		'angular' : siml.angular.parse
-		'default' : siml.parse
+	parsers = 
+		'html5' : siml.html5
+		'angular' : siml.angular
+		'default' : siml
 
 	grunt.registerMultiTask 'siml', 'SIML in Grunt.', () ->
 		
@@ -28,13 +28,13 @@ module.exports = ( grunt ) ->
 
 			# [default='  '] Use custom indentation when pretty=true
 			'indent' : '  '
-			
+
 			'parse' : 'default'
 
-		unless parser[ options.parse ]
+		unless parsers[ options.parse ]
 			options.parse = 'default'
 
-		parse = parser[ options.parse ]
+		parser = parsers[ options.parse ]
 
 		globOptions = 
 			'nonull' : true
@@ -56,7 +56,7 @@ module.exports = ( grunt ) ->
 			src = src.join options.delimeter
 
 			# Convert.
-			document = parse src, options
+			document = parser.parse src, options
 
 			# Write.
 			grunt.file.write pattern.dest, document
