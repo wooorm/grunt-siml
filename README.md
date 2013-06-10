@@ -58,7 +58,7 @@ SIML parser to use.
 
 ### Usage Examples
 
-In CoffeeScript, setting indentation to a tab character:
+In CoffeeScript, setting indentation to :
 
 ```coffee
 'siml' :
@@ -69,7 +69,6 @@ In CoffeeScript, setting indentation to a tab character:
 			'_dist/index.html' : '_source/index.siml'
 ```
 
-In JavaScript, forcing curly braces and forcing pretty-printing the resulting HTML.
 
 ```js
 'siml' : {

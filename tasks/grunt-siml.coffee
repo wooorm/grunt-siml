@@ -9,7 +9,7 @@ module.exports = ( grunt ) ->
 	siml = require 'siml'
 	fs = require 'fs'
 
-	parsers = 
+	parser = 
 		'html5' : siml.html5
 		'angular' : siml.angular
 		'default' : siml
@@ -28,13 +28,13 @@ module.exports = ( grunt ) ->
 
 			# [default='  '] Use custom indentation when pretty=true
 			'indent' : '  '
-
+			
 			'parse' : 'default'
 
-		unless parsers[ options.parse ]
+		unless parser[ options.parse ]
 			options.parse = 'default'
 
-		parser = parsers[ options.parse ]
+		parse = parser[ options.parse ]
 
 		globOptions = 
 			'nonull' : true
@@ -56,7 +56,7 @@ module.exports = ( grunt ) ->
 			src = src.join options.delimeter
 
 			# Convert.
-			document = parser.parse src, options
+			document = parse.parse src, options
 
 			# Write.
 			grunt.file.write pattern.dest, document
