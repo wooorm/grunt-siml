@@ -1,47 +1,25 @@
 {
   "name": "grunt-siml",
-  "description": "SIML in Grunt",
   "version": "0.0.6",
-  "homepage": "https://github.com/wooorm/grunt-siml",
-  "author": {
-    "name": "wooorm",
-    "email": "tituswormer@gmail.com",
-    "url": "https://github.com/wooorm"
+  "description": "SIML in Grunt",
+  "license": "MIT",
+  "keywords": [
+    "gruntplugin",
+    "siml"
+  ],
+  "main": "Grunfile.js",
+  "dependencies": {
+    "siml": "^0.3.0"
+  },
+  "peerDependencies": {
+    "grunt": "^0.4.0"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/wooorm/grunt-siml.git"
   },
-  "bugs": {
-    "url": "https://github.com/wooorm/grunt-siml/issues"
-  },
-  "main": "Grunfile.js",
-  "engines": {
-    "node": ">=0.8.0"
-  },
+  "author": "Titus Wormer <tituswormer@gmail.com>",
   "scripts": {
-    "test": "grunt"
-  },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/wooorm/grunt-siml/blob/master/LICENSE-MIT"
-    }
-  ],
-  "dependencies": {
-    "siml": "~0.3.0"
-  },
-  "devDependencies": {
-    "grunt": "0.4.0rc6"
-  },
-  "keywords": [
-    "gruntplugin",
-    "siml"
-  ],
-  "readme": "# grunt-siml\n> Compile SIML templates.\n\n## Getting Started\nThis plugin requires Grunt `~0.4.0`\n\nCheckout [Grunt](http://gruntjs.com/), if you haven't before.\n\nCheckout [SIML's introduction](https://github.com/padolsey/SIML/wiki/101---Introduction) for more information on [SIML](https://github.com/padolsey/SIML) itself.\n\n```shell\nnpm install grunt-siml --save-dev\n```\n\nOnce the Grunt Plugin has been installed, it may be enabled inside your Gruntfile with this line of CoffeeScript:\n\n```coffee\ngrunt.loadNpmTasks 'grunt-siml'\n```\n\n...or with the following JavaScript:\n\n```js\ngrunt.loadNpmTasks('grunt-siml');\n```\n\n## SIML task\n_Run this task with the `grunt siml` command._\n\nTask targets, files and options may be specified according to the grunt [Configuring tasks](http://gruntjs.com/configuring-tasks) guide.\n\n### Options\n\n#### pretty\nType: `Boolean`\nDefault: `true`\n\nOutput indented HTML (see `indent`).\n\n#### indent\nType: `String`\nDefault: `\"  \"`\n\nUse custom indentation. Works only with `pretty: true`\n\n#### curly\nType: `Boolean`\nDefault: `false`\n\nNest with curly brackets when true, whitespace when false.\n\n#### parse\nType: `String`\nDefault: `\"default\"`\nValues: `\"html5\"`, `\"angular\"`, or `\"default\"`.\n\nSIML parser to use.\n\n### Usage Examples\n\nIn CoffeeScript, setting indentation to :\n\n```coffee\n'siml' :\n\t'compile' :\n\t\t'options' : \n\t\t  \t'indent' : '\\t'\n\t\t'files' :\n\t\t\t'_dist/index.html' : '_source/index.siml'\n```\n\n\n```js\n'siml' : {\n\t'compile' : {\n\t\t'options' : {\n\t\t\t'curly' : true,\n\t\t\t'pretty' : false\n\t\t},\n\t\t'files' : {\n\t\t\t'index.html' : 'index.siml'\n\t\t}\n\t}\n}\n```\n",
-  "_id": "grunt-siml@0.0.5",
-  "dist": {
-    "shasum": "cad36989ac1f9be5c977bc0b08c35e61e202d918"
-  },
-  "_from": "grunt-siml@0.0.5"
+    "test" : "grunt"
+  }
 }
