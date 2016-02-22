@@ -6,7 +6,7 @@ Checkout [Grunt](http://gruntjs.com/), and [SIMLs introduction](https://github.c
 
 ## Usage
 
-This plugin requires Grunt `~0.4.0`
+This plugin requires Grunt `^1.0.0-rc.1`
 
 ```sh
 npm install grunt-siml --save-dev
